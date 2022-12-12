@@ -126,8 +126,6 @@ window.addEventListener('DOMContentLoaded', () =>{
 	});
 
 	// Cards
-	const menuElement = document.querySelector('.menu__field .container');
-
 	class MenuCard{
 		constructor(src, alt, title, descr, price, parentSelector, ...props){
 			this.src = src;
