@@ -183,4 +183,47 @@ window.addEventListener('DOMContentLoaded', () =>{
 		'15',
 		'.menu .container',
 	).render();
+
+	// Sumbit Data Forms
+	const forms = document.querySelectorAll('form');
+
+	forms.forEach(item => {
+		sumbitData(item);
+	});
+
+	const messageUser = {
+		loading: 'Загрузка',
+		success: 'Спасибо! Скоро мы с вами свяжемся',
+		failure: 'Что-то пошло не так'
+	};
+
+	function sumbitData(form){
+		form.addEventListener('submit', (e) =>{
+			e.preventDefault();
+
+			const messageStatus = document.createElement('div');
+			messageStatus.classList.add('status');
+			messageStatus.textContent = messageUser.loading;
+			form.append(messageStatus);
+
+			const request = new XMLHttpRequest();
+			request.open('POST', 'server.php');
+
+			const formData = new FormData(form);
+			request.send(formData);
+
+			request.addEventListener('load', () =>{
+				if(request.status === 200){
+					console.log(request.response);
+					messageStatus.textContent = messageUser.success;
+					form.reset();
+					setTimeout(() =>{
+						messageStatus.remove();
+					}, 1000);
+				}else{
+					messageStatus.textContent = messageUser.failure;
+				}
+			});
+		});
+	}
 });
