@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', () =>{
 			hours,
 			minutes,
 			seconds
-		}
+		};
 	};
 
 	const getZero = (num) =>{
@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', () =>{
 
 		updateClock();
 		function updateClock (){
-			const t = getTimeRemaining(endTime)
+			const t = getTimeRemaining(endTime);
 
 			days.textContent = getZero(t.days);
 			minutes.textContent = getZero(t.minutes);
@@ -154,7 +154,7 @@ window.addEventListener('DOMContentLoaded', () =>{
 							<div class="menu__item-cost">Цена:</div>
 							<div class="menu__item-total"><span>${this.price}</span> грн/день</div>
 					</div>
-				`
+				`;
 			this.parent.append(element);
 		}
 	}
