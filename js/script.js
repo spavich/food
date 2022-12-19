@@ -205,7 +205,7 @@ window.addEventListener('DOMContentLoaded', () =>{
 			form.insertAdjacentElement('afterend', messageStatus);
 
 			const request = new XMLHttpRequest();
-			request.open('POST', 'server1.php');
+			request.open('POST', 'server.php');
 			request.setRequestHeader('Content-type', 'application/json');
 
 			const formData = new FormData(form);
