@@ -268,11 +268,15 @@ window.addEventListener('DOMContentLoaded', () =>{
 		item.style.width = slidesWrapperWidth;
 	});
 
+	const deleteNotDigits = (str) =>{
+		return +str.replace(/\D/ig, '');
+	}
+
 	prev.addEventListener('click', () =>{
 		if(offset === 0){
-			offset = +slidesWrapperWidth.slice(0, slidesWrapperWidth.length - 2) * (slides.length - 1)
+			offset = deleteNotDigits(slidesWrapperWidth) * (slides.length - 1)
 		}else{
-			offset -= +slidesWrapperWidth.slice(0, slidesWrapperWidth.length - 2);
+			offset -= deleteNotDigits(slidesWrapperWidth);
 		}
 		slidesField.style.transform = `translateX(-${offset}px)`;
 
@@ -280,10 +284,10 @@ window.addEventListener('DOMContentLoaded', () =>{
 		(indexSlide < 10) ? current.textContent = `0${indexSlide}` : current.textContent = indexSlide;
 	});
 	next.addEventListener('click', () =>{
-		if(offset == +slidesWrapperWidth.slice(0, slidesWrapperWidth.length - 2) * (slides.length - 1)){
+		if(offset == deleteNotDigits(slidesWrapperWidth) * (slides.length - 1)){
 			offset = 0;
 		}else{
-			offset += +slidesWrapperWidth.slice(0, slidesWrapperWidth.length - 2);
+			offset += deleteNotDigits(slidesWrapperWidth);
 		}
 		slidesField.style.transform = `translateX(-${offset}px)`;
 
@@ -322,7 +326,6 @@ window.addEventListener('DOMContentLoaded', () =>{
 				}
 		});
 	}
-
 	initLocalSettings('#gender div', 'calculating__choose-item_active');
 	initLocalSettings('.calculating__choose_big div', 'calculating__choose-item_active');
 
@@ -387,7 +390,6 @@ window.addEventListener('DOMContentLoaded', () =>{
 			calcTotal();
 		});
 	}
-
 	getDynamicInformation('#height');
 	getDynamicInformation('#weight');
 	getDynamicInformation('#age');
