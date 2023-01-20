@@ -35,9 +35,9 @@ const cards = () =>{
 		}
 	}
 	
-	getResource('http://localhost:3000/menu')
+	getResource('./js/services/db.json')
 	.then(data => {
-		data.forEach(({img, altimg, title, descr, price}) => {
+		data.menu.forEach(({img, altimg, title, descr, price}) => {
 			new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
 		});
 	});

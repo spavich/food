@@ -1,7 +1,7 @@
 let path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './js/script.js',
   output: {
     filename: 'bundle.js',
