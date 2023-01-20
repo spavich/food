@@ -18,7 +18,7 @@
             </nav>
         </div>
         <div class="header__right-block">
-            <button class="btn btn_white">Связаться с нами</button>
+            <button data-openModal class="btn btn_white">Связаться с нами</button>
         </div>
     </header>
     <div class="sidepanel">
@@ -42,13 +42,13 @@
                         Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Для людей, которые интересуются спортом; активных и здоровых. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!
                     </div>
                 </div>
-                <!-- <div class="tabcontent">
+                <div class="tabcontent">
                     <img src="img/tabs/elite.jpg" alt="elite">
                     <div class="tabcontent__descr">
                         Меню “Премиум” - мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!                                     
                     </div>
-                </div> -->
-                <!-- <div class="tabcontent">
+                </div>
+                <div class="tabcontent">
                     <img src="img/tabs/post.jpg" alt="post">
                     <div class="tabcontent__descr">
                         Наше специальное “Постное меню” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения. Полная гармония с собой и природой в каждом элементе! Все будет Ом!                                     
@@ -59,7 +59,7 @@
                     <div class="tabcontent__descr">
                         Меню "Сбалансированное" - это соответствие вашего рациона всем научным рекомендациям. Мы тщательно просчитываем вашу потребность в к/б/ж/у и создаем лучшие блюда для вас.
                     </div>
-                </div> -->
+                </div>
                 <div class="tabheader">
                     <h3>Выберите стиль питания</h3>
                     <div class="tabheader__items">
@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="offer__action">
-                <button class="btn btn_dark">Связаться с нами</button>
+                <button data-openModal class="btn btn_dark">Связаться с нами</button>
             </div>
         </div>
         <div class="container">
@@ -113,18 +113,44 @@
                     </div>
                 </div>
                 <div class="offer__slider-wrapper">
-                    <div class="offer__slide">
+                    <div class="offer__slider-inner">
+											<div class="offer__slide">
                         <img src="img/slider/pepper.jpg" alt="pepper">
-                    </div>
-                    <!-- <div class="offer__slide">
-                        <img src="img/slider/food-12.jpg" alt="food">
-                    </div>
-                    <div class="offer__slide">
-                        <img src="img/slider/olive-oil.jpg" alt="oil">
-                    </div>
-                    <div class="offer__slide">
-                        <img src="img/slider/paprika.jpg" alt="paprika">
-                    </div> -->
+											</div>
+											<div class="offer__slide">
+													<img src="img/slider/food-12.jpg" alt="food">
+											</div>
+											<div class="offer__slide">
+													<img src="img/slider/olive-oil.jpg" alt="oil">
+											</div>
+											<div class="offer__slide">
+													<img src="img/slider/paprika.jpg" alt="paprika">
+											</div>
+											<div class="offer__slide">
+												<img src="img/slider/pepper.jpg" alt="pepper">
+											</div>
+											<div class="offer__slide">
+													<img src="img/slider/food-12.jpg" alt="food">
+											</div>
+											<div class="offer__slide">
+													<img src="img/slider/olive-oil.jpg" alt="oil">
+											</div>
+											<div class="offer__slide">
+													<img src="img/slider/paprika.jpg" alt="paprika">
+											</div>
+											<div class="offer__slide">
+												<img src="img/slider/pepper.jpg" alt="pepper">
+											</div>
+											<div class="offer__slide">
+													<img src="img/slider/food-12.jpg" alt="food">
+											</div>
+											<div class="offer__slide">
+													<img src="img/slider/olive-oil.jpg" alt="oil">
+											</div>
+											<div class="offer__slide">
+													<img src="img/slider/paprika.jpg" alt="paprika">
+											</div>
+										</div>
                 </div>
             </div>
         </div>
@@ -141,8 +167,8 @@
                     Ваш пол
                 </div>
                 <div class="calculating__choose" id="gender">
-                    <div class="calculating__choose-item calculating__choose-item_active">Женщина</div>
-                    <div class="calculating__choose-item">Мужчина</div>
+                    <div id="female" class="calculating__choose-item calculating__choose-item_active">Женщина</div>
+                    <div id="male" class="calculating__choose-item">Мужчина</div>
                 </div>
 
                 <div class="calculating__subtitle">
@@ -158,10 +184,10 @@
                     Выберите вашу физическая активность
                 </div>
                 <div class="calculating__choose calculating__choose_big">
-                    <div id="low" class="calculating__choose-item">Низкая активность </div>
-                    <div id="small"  class="calculating__choose-item calculating__choose-item_active">Невысокая активность</div>
-                    <div id="medium" class="calculating__choose-item">Умеренная активность</div>
-                    <div id="high" class="calculating__choose-item">Высокая активность</div>
+                    <div id="low" data-ratio="1.2" class="calculating__choose-item">Низкая активность </div>
+                    <div id="small"  data-ratio="1.375" class="calculating__choose-item calculating__choose-item_active">Невысокая активность</div>
+                    <div id="medium" data-ratio="1.55" class="calculating__choose-item">Умеренная активность</div>
+                    <div id="high" data-ratio="1.725" class="calculating__choose-item">Высокая активность</div>
                 </div>
 
                 <div class="calculating__divider"></div>
@@ -185,36 +211,7 @@
 
         <div class="menu__field">
             <div class="container">
-                <div class="menu__item">
-                    <img src="img/tabs/vegy.jpg" alt="vegy">
-                    <h3 class="menu__item-subtitle">Меню "Фитнес"</h3>
-                    <div class="menu__item-descr">Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!</div>
-                    <div class="menu__item-divider"></div>
-                    <div class="menu__item-price">
-                        <div class="menu__item-cost">Цена:</div>
-                        <div class="menu__item-total"><span>229</span> грн/день</div>
-                    </div>
-                </div>
-                <div class="menu__item">
-                    <img src="img/tabs/elite.jpg" alt="elite">
-                    <h3 class="menu__item-subtitle">Меню “Премиум”</h3>
-                    <div class="menu__item-descr">В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!</div>
-                    <div class="menu__item-divider"></div>
-                    <div class="menu__item-price">
-                        <div class="menu__item-cost">Цена:</div>
-                        <div class="menu__item-total"><span>550</span> грн/день</div>
-                    </div>
-                </div>
-                <div class="menu__item">
-                    <img src="img/tabs/post.jpg" alt="post">
-                    <h3 class="menu__item-subtitle">Меню "Постное"</h3>
-                    <div class="menu__item-descr">Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков. </div>
-                    <div class="menu__item-divider"></div>
-                    <div class="menu__item-price">
-                        <div class="menu__item-cost">Цена:</div>
-                        <div class="menu__item-total"><span>430</span> грн/день</div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -246,7 +243,7 @@
                 </div>
             </div>
             <div class="promotion__timer">
-                <div class="title">Осталось до конца акции:</div>
+                <div class="title">Осталось до поиска роботы:</div>
                 <div class="timer">
                     <div class="timer__block">
                         <span id="days">12</span>
@@ -291,7 +288,7 @@
         <div class="modal__dialog">
             <div class="modal__content">
                 <form action="#">
-                    <div class="modal__close">&times;</div>
+                    <div data-closeModal class="modal__close">&times;</div>
                     <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
                     <input required placeholder="Ваше имя" name="name" type="text" class="modal__input">
                     <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input">
@@ -301,6 +298,6 @@
         </div>
     </div>
 
-		<script src="js/script.js"></script>
+		<script src="js/bundle.js"></script>
 </body>
 </html>
